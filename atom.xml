@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://mathfur.github.com/atom.xml" rel="self"/>
   <link href="http://mathfur.github.com/"/>
-  <updated>2012-11-18T22:12:30+09:00</updated>
+  <updated>2012-11-24T15:11:07+09:00</updated>
   <id>http://mathfur.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[test121124]]></title>
+    <link href="http://mathfur.github.com/blog/2012/11/24/test121124/"/>
+    <updated>2012-11-24T15:07:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/11/24/test121124</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[今日やったこと]]></title>
+    <link href="http://mathfur.github.com/blog/2012/11/24/diary121124/"/>
+    <updated>2012-11-24T14:53:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/11/24/diary121124</id>
+    <content type="html"><![CDATA[<p>octopressの新しいページを作る</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm use 1.9.3
+</span><span class='line'>bundle exec rake new_post\['foo'\]  # create article foo in zsh</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[test121118]]></title>

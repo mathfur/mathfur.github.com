@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | My Octopress Blog]]></title>
+  <link href="http://mathfur.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://mathfur.github.com/"/>
+  <updated>2012-11-24T15:11:07+09:00</updated>
+  <id>http://mathfur.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[今日やったこと]]></title>
+    <link href="http://mathfur.github.com/blog/2012/11/24/diary121124/"/>
+    <updated>2012-11-24T14:53:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/11/24/diary121124</id>
+    <content type="html"><![CDATA[<p>octopressの新しいページを作る
+<code>
+rvm use 1.9.3
+bundle exec rake new_post\['foo'\]  # create article foo in zsh
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
