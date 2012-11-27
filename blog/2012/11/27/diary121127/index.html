@@ -5,14 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>今日やったこと - My Octopress Blog</title>
+  <title>windows7環境で簡単なGUIアプリ作成. green shoes使ってみた - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="octopressの新しいページを作る 1
+  <meta name="description" content="以下手順. ruby-one-click installerでrubyをインストール
+gem install green_shoes
+以下をfoo.rbファイルに書き込む。 1
 2
-rvm use 1.9.3
-bundle exec rake new_post\['foo'\] # create article foo in zsh ">
+3
+4 require 'green_shoes' Shoes.app do para 'Hello' end &# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +23,7 @@ bundle exec rake new_post\['foo'\] # create article foo in zsh ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mathfur.github.com/blog/2012/11/24/diary121124/">
+  <link rel="canonical" href="http://mathfur.github.com/blog/2012/11/27/diary121127/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -70,7 +72,7 @@ bundle exec rake new_post\['foo'\] # create article foo in zsh ">
   
   <header>
     
-      <h1 class="entry-title">今日やったこと</h1>
+      <h1 class="entry-title">windows7環境で簡単なGUIアプリ作成. Green Shoes使ってみた</h1>
     
     
       <p class="meta">
@@ -86,19 +88,35 @@ bundle exec rake new_post\['foo'\] # create article foo in zsh ">
   
 
 
-<time datetime="2012-11-24T14:53:00+09:00" pubdate data-updated="true">Nov 24<span>th</span>, 2012</time>
+<time datetime="2012-11-27T22:57:00+09:00" pubdate data-updated="true">Nov 27<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>octopressの新しいページを作る</p>
+<div class="entry-content"><p>以下手順.</p>
+
+<ol>
+<li>ruby-one-click installerでrubyをインストール</li>
+<li>gem install green_shoes</li>
+<li>以下をfoo.rbファイルに書き込む。</li>
+</ol>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rvm use 1.9.3
-</span><span class='line'>bundle exec rake new_post\['foo'\]  # create article foo in zsh</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  require 'green_shoes'
+</span><span class='line'>  Shoes.app do
+</span><span class='line'>    para 'Hello'
+</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>&#8220;rubyw.exe foo.rb&#8221;を呼び出すショートカット作成する. rubyw.exeを使うと、rbファイル実行時にコマンドプロンプトが出ないので綺麗にできる.</li>
+</ol>
 
 </div>
 
@@ -122,12 +140,12 @@ bundle exec rake new_post\['foo'\] # create article foo in zsh ">
   
 
 
-<time datetime="2012-11-24T14:53:00+09:00" pubdate data-updated="true">Nov 24<span>th</span>, 2012</time>
+<time datetime="2012-11-27T22:57:00+09:00" pubdate data-updated="true">Nov 27<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
   
 </span>
 
@@ -136,7 +154,7 @@ bundle exec rake new_post\['foo'\] # create article foo in zsh ">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mathfur.github.com/blog/2012/11/24/diary121124/" data-via="" data-counturl="http://mathfur.github.com/blog/2012/11/24/diary121124/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mathfur.github.com/blog/2012/11/27/diary121127/" data-via="" data-counturl="http://mathfur.github.com/blog/2012/11/27/diary121127/" >Tweet</a>
   
   
   
@@ -145,10 +163,8 @@ bundle exec rake new_post\['foo'\] # create article foo in zsh ">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/11/18/first-post/" title="Previous Post: test121118">&laquo; test121118</a>
+        <a class="basic-alignment left" href="/blog/2012/11/24/test121124/" title="Previous Post: test121124">&laquo; test121124</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/11/24/test121124/" title="Next Post: test121124">test121124 &raquo;</a>
       
     </p>
   </footer>

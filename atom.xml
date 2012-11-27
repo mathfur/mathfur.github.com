@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://mathfur.github.com/atom.xml" rel="self"/>
   <link href="http://mathfur.github.com/"/>
-  <updated>2012-11-24T15:20:03+09:00</updated>
+  <updated>2012-11-27T23:08:26+09:00</updated>
   <id>http://mathfur.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[windows7環境で簡単なGUIアプリ作成. green shoes使ってみた]]></title>
+    <link href="http://mathfur.github.com/blog/2012/11/27/diary121127/"/>
+    <updated>2012-11-27T22:57:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/11/27/diary121127</id>
+    <content type="html"><![CDATA[<p>以下手順.</p>
+
+<ol>
+<li>ruby-one-click installerでrubyをインストール</li>
+<li>gem install green_shoes</li>
+<li>以下をfoo.rbファイルに書き込む。</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  require 'green_shoes'
+</span><span class='line'>  Shoes.app do
+</span><span class='line'>    para 'Hello'
+</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>&#8220;rubyw.exe foo.rb&#8221;を呼び出すショートカット作成する. rubyw.exeを使うと、rbファイル実行時にコマンドプロンプトが出ないので綺麗にできる.</li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[test121124]]></title>

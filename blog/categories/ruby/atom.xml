@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | My Octopress Blog]]></title>
+  <link href="http://mathfur.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://mathfur.github.com/"/>
+  <updated>2012-11-27T23:08:26+09:00</updated>
+  <id>http://mathfur.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[windows7環境で簡単なGUIアプリ作成. green shoes使ってみた]]></title>
+    <link href="http://mathfur.github.com/blog/2012/11/27/diary121127/"/>
+    <updated>2012-11-27T22:57:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/11/27/diary121127</id>
+    <content type="html"><![CDATA[<p>以下手順.</p>
+
+<ol>
+<li>ruby-one-click installerでrubyをインストール</li>
+<li>gem install green_shoes</li>
+<li>以下をfoo.rbファイルに書き込む。</li>
+</ol>
+
+
+<p>```</p>
+
+<pre><code>  require 'green_shoes'
+  Shoes.app do
+    para 'Hello'
+  end
+</code></pre>
+
+<p>```</p>
+
+<ol>
+<li>"rubyw.exe foo.rb"を呼び出すショートカット作成する. rubyw.exeを使うと、rbファイル実行時にコマンドプロンプトが出ないので綺麗にできる.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
