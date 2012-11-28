@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://mathfur.github.com/atom.xml" rel="self"/>
   <link href="http://mathfur.github.com/"/>
-  <updated>2012-11-27T23:08:26+09:00</updated>
+  <updated>2012-11-29T00:03:52+09:00</updated>
   <id>http://mathfur.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ruby shoesの要素の配置など]]></title>
+    <link href="http://mathfur.github.com/blog/2012/11/28/jin-ri-yatutakoto/"/>
+    <updated>2012-11-28T23:58:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/11/28/jin-ri-yatutakoto</id>
+    <content type="html"><![CDATA[<p>要素を縦方向に並べる</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>stack do
+</span><span class='line'>  element1
+</span><span class='line'>  element2
+</span><span class='line'>  element3
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>要素を横方向に並べる</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>flow do
+</span><span class='line'>  element1
+</span><span class='line'>  element2
+</span><span class='line'>  element3
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>listboxの初期値を与える</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>listbox items: %w{OK NG}, choose: 'OK'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>listboxの値変更時に何かする</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>listbox = listbox items: %w{OK NG}
+</span><span class='line'>listbox.change do |box|
+</span><span class='line'>  alert(box.text)
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[windows7環境で簡単なGUIアプリ作成. green shoes使ってみた]]></title>
