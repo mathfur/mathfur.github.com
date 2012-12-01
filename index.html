@@ -9,20 +9,17 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="要素を縦方向に並べる 1
+  <meta name="description" content="jQuery Masonryの動作確認. 1
 2
 3
 4
 5
-stack do element1 element2 element3
-end 要素を横方向に並べる 1
-2
-3
-4
-5
-flow do element1 element2 element3
-end listboxの初期値を与える 1
-listbox &hellip;">
+6
+7
+8
+9
+10
+&lt;div id="entries_container"&gt; &lt;% @entries.each do |entry| %&gt; &lt;div class="&lt;%= dom_class( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +74,97 @@ listbox &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/01/diary121201/">今日やったこと</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-01T21:15:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>jQuery Masonryの動作確認.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="entries_container"&gt;
+</span><span class='line'>  &lt;% @entries.each do |entry| %&gt;
+</span><span class='line'>    &lt;div class="&lt;%= dom_class(entry) %&gt;" id="&lt;%= dom_id(entry) %&gt;"&gt;
+</span><span class='line'>      &lt;h3&gt;&lt;%= entry.title %&gt;&lt;/h3&gt;
+</span><span class='line'>      &lt;p&gt;
+</span><span class='line'>        &lt;%= entry.contents[0..100] %&gt;
+</span><span class='line'>      &lt;/p&gt;
+</span><span class='line'>    &lt;/div&gt;
+</span><span class='line'>  &lt;% end %&gt;
+</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>に対して、entries.js.coffeeに</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ -&gt;
+</span><span class='line'>  $('#entries_container').masonry()</span></code></pre></td></tr></table></div></figure>
+
+
+<p>で実行した。
+また、以下で遷移時のアニメーションがONになる。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('#entries_container').masonry(isAnimated: true)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>ほか引っかかった点
+
+<ul>
+<li>application.jsの&#8221;//= require_tree .&#8221;を消すとコントローラごとのjsは読み込まれない
+
+<ul>
+<li>代わりにlayoutに&#8221;&lt;%= javascript_include_tag params[:controller] %>&#8221;を追加して各コントローラで別々に読み込むようにした</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -343,6 +431,10 @@ listbox &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/12/01/diary121201/">今日やったこと</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/11/28/jin-ri-yatutakoto/">ruby shoesの要素の配置など</a>
       </li>
     
@@ -356,10 +448,6 @@ listbox &hellip;">
     
       <li class="post">
         <a href="/blog/2012/11/24/diary121124/">今日やったこと</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/18/first-post/">test121118</a>
       </li>
     
   </ul>

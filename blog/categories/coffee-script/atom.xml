@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: coffee-script | My Octopress Blog]]></title>
+  <link href="http://mathfur.github.com/blog/categories/coffee-script/atom.xml" rel="self"/>
+  <link href="http://mathfur.github.com/"/>
+  <updated>2012-12-01T22:18:51+09:00</updated>
+  <id>http://mathfur.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[今日やったこと]]></title>
+    <link href="http://mathfur.github.com/blog/2012/12/01/diary121201/"/>
+    <updated>2012-12-01T21:15:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/12/01/diary121201</id>
+    <content type="html"><![CDATA[<ul>
+<li>jQuery Masonryの動作確認.
+```</li>
+</ul>
+
+
+<div id="entries_container">
+  <% @entries.each do |entry| %>
+    <div class="<%= dom_class(entry) %>" id="<%= dom_id(entry) %>">
+      <h3><%= entry.title %></h3>
+      <p>
+        <%= entry.contents[0..100] %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+
+<p><code>
+に対して、entries.js.coffeeに
+</code>
+$ ->
+  $('#entries_container').masonry()
+<code>
+で実行した。
+また、以下で遷移時のアニメーションがONになる。
+</code>
+$('#entries_container').masonry(isAnimated: true)
+```</p>
+
+<ul>
+<li>ほか引っかかった点
+
+<ul>
+<li>application.jsの"//= require_tree ."を消すとコントローラごとのjsは読み込まれない
+
+<ul>
+<li>代わりにlayoutに"&lt;%= javascript_include_tag params[:controller] %>"を追加して各コントローラで別々に読み込むようにした</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
