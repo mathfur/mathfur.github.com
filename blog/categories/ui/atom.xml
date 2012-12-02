@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: UI | My Octopress Blog]]></title>
+  <link href="http://mathfur.github.com/blog/categories/ui/atom.xml" rel="self"/>
+  <link href="http://mathfur.github.com/"/>
+  <updated>2012-12-02T19:10:28+09:00</updated>
+  <id>http://mathfur.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery UI Layout実験]]></title>
+    <link href="http://mathfur.github.com/blog/2012/12/02/diary121201-2/"/>
+    <updated>2012-12-02T19:03:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/12/02/diary121201-2</id>
+    <content type="html"><![CDATA[<p>以下で動作した
+```javascript</p>
+
+<!-- 上ペイン -->
+
+
+<div class="ui-layout-north"><%= params[:controller] %>のページ</div>
+
+
+
+
+<!-- 下ペイン -->
+
+
+<div class="ui-layout-south">Copyright(c) mathfur</div>
+
+
+
+
+<!-- 中央 -->
+
+
+<div class="ui-layout-center"><%= yield %></div>
+
+
+
+
+<!-- 左ペイン -->
+
+
+<div class="ui-layout-west">
+  <ul>
+    <li><%= link_to_unless_current "Users", users_path %></li>
+    <li><%= link_to_unless_current "Blogs", blogs_path %></li>
+    <li><%= link_to_unless_current "Entries", entries_path %></li>
+  </ul>
+</div>
+
+
+
+
+<!-- 右ペイン -->
+
+
+<div class="ui-layout-east">
+<h3>備考</h3>
+<p>
+..............
+</p>
+</div>
+
+
+<p><code>
+</code>
+$(function(){
+  $('body').layout({</p>
+
+<pre><code>applyDefaultStyles: true,
+
+// 閉じる、幅変更のON/OFF
+north__closable: false,
+east__closable: true,
+south__closable: false,
+west__closable: true,
+north__resizable: false,
+east__resizable: true,
+south__resizable: false,
+west__resizable: true,
+
+slideTrigger_close: 'mouseover', // うまく動作しない
+east__togglerTip_open: "開く", // トグル領域にホバーするとツールチップとして表示される
+
+togglerAlign_open: "top", // トグル領域が上端に来る
+togglerAlign_closed: "top", // 〃
+
+togglerLength_open: 30, // トグル領域の長さ
+togglerLength_closed: 30, // 〃
+
+fxName: 'scale',  // 閉じ方が変わるらしいがうまく動作しない
+fxSpeed: 'slow',  // 閉じるスピード変わるらしいが〃
+
+east__initClosed: true,  // 右ペインがデフォルトで閉じている
+
+east__togglerContent_open: "&lt;span&gt;OPEN&lt;/span&gt;", // うまく動作しない
+east__spacing_open: 30, // リサイズバーの幅
+east__spacing_closed: 30, // 〃
+
+west__size: 200, 
+</code></pre>
+
+<p>  });
+})
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

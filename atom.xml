@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://mathfur.github.com/atom.xml" rel="self"/>
   <link href="http://mathfur.github.com/"/>
-  <updated>2012-12-02T17:07:03+09:00</updated>
+  <updated>2012-12-02T19:10:28+09:00</updated>
   <id>http://mathfur.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,141 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery UI Layout実験]]></title>
+    <link href="http://mathfur.github.com/blog/2012/12/02/diary121201-2/"/>
+    <updated>2012-12-02T19:03:00+09:00</updated>
+    <id>http://mathfur.github.com/blog/2012/12/02/diary121201-2</id>
+    <content type="html"><![CDATA[<p>以下で動作した</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c">&lt;!--</span> <span class="err">上ペイン</span> <span class="o">--&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ui-layout-north&quot;</span><span class="o">&gt;&lt;%=</span> <span class="nx">params</span><span class="p">[</span><span class="o">:</span><span class="nx">controller</span><span class="p">]</span> <span class="o">%&gt;</span><span class="err">のページ</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!--</span> <span class="err">下ペイン</span> <span class="o">--&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ui-layout-south&quot;</span><span class="o">&gt;</span><span class="nx">Copyright</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="nx">mathfur</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!--</span> <span class="err">中央</span> <span class="o">--&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ui-layout-center&quot;</span><span class="o">&gt;&lt;%=</span> <span class="nx">yield</span> <span class="o">%&gt;&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!--</span> <span class="err">左ペイン</span> <span class="o">--&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ui-layout-west&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;&lt;%=</span> <span class="nx">link_to_unless_current</span> <span class="s2">&quot;Users&quot;</span><span class="p">,</span> <span class="nx">users_path</span> <span class="o">%&gt;&lt;</span><span class="err">/li&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;&lt;%=</span> <span class="nx">link_to_unless_current</span> <span class="s2">&quot;Blogs&quot;</span><span class="p">,</span> <span class="nx">blogs_path</span> <span class="o">%&gt;&lt;</span><span class="err">/li&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;&lt;%=</span> <span class="nx">link_to_unless_current</span> <span class="s2">&quot;Entries&quot;</span><span class="p">,</span> <span class="nx">entries_path</span> <span class="o">%&gt;&lt;</span><span class="err">/li&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!--</span> <span class="err">右ペイン</span> <span class="o">--&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ui-layout-east&quot;</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="err">備考</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="p">..............</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">layout</span><span class="p">({</span>
+</span><span class='line'>    <span class="nx">applyDefaultStyles</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// 閉じる、幅変更のON/OFF</span>
+</span><span class='line'>    <span class="nx">north__closable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">east__closable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">south__closable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">west__closable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">north__resizable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">east__resizable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">south__resizable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">west__resizable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">slideTrigger_close</span><span class="o">:</span> <span class="s1">&#39;mouseover&#39;</span><span class="p">,</span> <span class="c1">// うまく動作しない</span>
+</span><span class='line'>    <span class="nx">east__togglerTip_open</span><span class="o">:</span> <span class="s2">&quot;開く&quot;</span><span class="p">,</span> <span class="c1">// トグル領域にホバーするとツールチップとして表示される</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">togglerAlign_open</span><span class="o">:</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="c1">// トグル領域が上端に来る</span>
+</span><span class='line'>    <span class="nx">togglerAlign_closed</span><span class="o">:</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="c1">// 〃</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">togglerLength_open</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">// トグル領域の長さ</span>
+</span><span class='line'>    <span class="nx">togglerLength_closed</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">// 〃</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">fxName</span><span class="o">:</span> <span class="s1">&#39;scale&#39;</span><span class="p">,</span>  <span class="c1">// 閉じ方が変わるらしいがうまく動作しない</span>
+</span><span class='line'>    <span class="nx">fxSpeed</span><span class="o">:</span> <span class="s1">&#39;slow&#39;</span><span class="p">,</span>  <span class="c1">// 閉じるスピード変わるらしいが〃</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">east__initClosed</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// 右ペインがデフォルトで閉じている</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">east__togglerContent_open</span><span class="o">:</span> <span class="s2">&quot;&lt;span&gt;OPEN&lt;/span&gt;&quot;</span><span class="p">,</span> <span class="c1">// うまく動作しない</span>
+</span><span class='line'>    <span class="nx">east__spacing_open</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">// リサイズバーの幅</span>
+</span><span class='line'>    <span class="nx">east__spacing_closed</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">// 〃</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">west__size</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[infinitescroll実験]]></title>

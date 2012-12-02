@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
+  <title>jQuery UI Layout実験 - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
@@ -44,7 +44,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mathfur.github.com/">
+  <link rel="canonical" href="http://mathfur.github.com/blog/2012/12/02/diary121201-2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -88,15 +88,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/12/02/diary121201-2/">jQuery UI Layout実験</a></h1>
+      <h1 class="entry-title">jQuery UI Layout実験</h1>
     
     
       <p class="meta">
@@ -119,7 +116,7 @@
   </header>
 
 
-  <div class="entry-content"><p>以下で動作した</p>
+<div class="entry-content"><p>以下で動作した</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -247,118 +244,16 @@
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/02/diary121202/">Infinitescroll実験</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
 
-<time datetime="2012-12-02T08:30:00+09:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>以下のコードで成功した。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">&lt;table id=&quot;entries_list&quot;&gt;</span>
-</span><span class='line'><span class="x">  &lt;tr&gt;</span>
-</span><span class='line'><span class="x">    &lt;th&gt;ID&lt;/th&gt;</span>
-</span><span class='line'><span class="x">    &lt;th&gt;Title&lt;/th&gt;</span>
-</span><span class='line'><span class="x">  &lt;/tr&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">  </span><span class="cp">&lt;%</span> <span class="vi">@entries</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
-</span><span class='line'><span class="x">    &lt;tr class=&#39;</span><span class="cp">&lt;%=</span> <span class="n">dom_class</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x">&#39;&gt;</span>
-</span><span class='line'><span class="x">      &lt;td&gt;</span><span class="cp">&lt;%=</span> <span class="n">entry</span><span class="o">.</span><span class="n">id</span> <span class="cp">%&gt;</span><span class="x">&lt;/td&gt;</span>
-</span><span class='line'><span class="x">      &lt;td&gt;</span><span class="cp">&lt;%=</span> <span class="n">entry</span><span class="o">.</span><span class="n">title</span> <span class="cp">%&gt;</span><span class="x">&lt;/td&gt;</span>
-</span><span class='line'><span class="x">    &lt;/tr&gt;</span>
-</span><span class='line'><span class="x">  </span><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
-</span><span class='line'><span class="x">&lt;/table&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">&lt;nav id=&quot;page-nav&quot;&gt;</span>
-</span><span class='line'><span class="x">  </span><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">entries_path</span><span class="p">(</span><span class="ss">:page</span> <span class="o">=&gt;</span> <span class="vi">@page</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
-</span><span class='line'><span class="x">&lt;/nav&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='coffee-script'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s">&#39;table#foo&#39;</span><span class="p">).</span><span class="nx">infinitescroll</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nv">navSelector: </span><span class="s">&#39;#page-nav&#39;</span><span class="p">,</span>
-</span><span class='line'>  <span class="nv">nextSelector: </span><span class="s">&#39;#page-nav a&#39;</span><span class="p">,</span>
-</span><span class='line'>  <span class="nv">itemSelector: </span><span class="s">&#39;#entries_list tr.entry&#39;</span><span class="p">,</span>
-</span><span class='line'>  <span class="nv">loading: </span><span class="p">{</span>
-</span><span class='line'>    <span class="nv">msgText: </span><span class="s">&#39;...&#39;</span><span class="p">,</span> <span class="p">,</span>  <span class="c1"># 読み込み中に表示される</span>
-</span><span class='line'>    <span class="nv">finishedMsg: </span><span class="s">&#39;&#39;</span><span class="p">,</span>   <span class="c1"># 読み込み完了時に表示される</span>
-</span><span class='line'>    <span class="nv">img: </span><span class="kc">null</span>          <span class="c1"># これを付けないとプログレスバーが表示される</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/01/diary121201/">今日やったこと</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -370,337 +265,41 @@
   
 
 
-<time datetime="2012-12-01T21:15:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>jQuery Masonryの動作確認.</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="entries_container"&gt;
-</span><span class='line'>  &lt;% @entries.each do |entry| %&gt;
-</span><span class='line'>    &lt;div class="&lt;%= dom_class(entry) %&gt;" id="&lt;%= dom_id(entry) %&gt;"&gt;
-</span><span class='line'>      &lt;h3&gt;&lt;%= entry.title %&gt;&lt;/h3&gt;
-</span><span class='line'>      &lt;p&gt;
-</span><span class='line'>        &lt;%= entry.contents[0..100] %&gt;
-</span><span class='line'>      &lt;/p&gt;
-</span><span class='line'>    &lt;/div&gt;
-</span><span class='line'>  &lt;% end %&gt;
-</span><span class='line'>&lt;/div&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>に対して、entries.js.coffeeに</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ -&gt;
-</span><span class='line'>  $('#entries_container').masonry()</span></code></pre></td></tr></table></div></figure>
-
-
-<p>で実行した。
-また、以下で遷移時のアニメーションがONになる。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$('#entries_container').masonry(isAnimated: true)</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>ほか引っかかった点
-
-<ul>
-<li>application.jsの&#8221;//= require_tree .&#8221;を消すとコントローラごとのjsは読み込まれない
-
-<ul>
-<li>代わりにlayoutに&#8221;&lt;%= javascript_include_tag params[:controller] %>&#8221;を追加して各コントローラで別々に読み込むようにした</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-12-02T19:03:00+09:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/28/jin-ri-yatutakoto/">Ruby Shoesの要素の配置など</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/layout/'>Layout</a>, <a class='category' href='/blog/categories/ui/'>UI</a>, <a class='category' href='/blog/categories/jquery/'>jQuery</a>
+  
+</span>
 
 
-<time datetime="2012-11-28T23:58:00+09:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>要素を縦方向に並べる</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>stack do
-</span><span class='line'>  element1
-</span><span class='line'>  element2
-</span><span class='line'>  element3
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p>要素を横方向に並べる</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>flow do
-</span><span class='line'>  element1
-</span><span class='line'>  element2
-</span><span class='line'>  element3
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-<p>listboxの初期値を与える</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>listbox items: %w{OK NG}, choose: 'OK'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>listboxの値変更時に何かする</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>listbox = listbox items: %w{OK NG}
-</span><span class='line'>listbox.change do |box|
-</span><span class='line'>  alert(box.text)
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mathfur.github.com/blog/2012/12/02/diary121201-2/" data-via="" data-counturl="http://mathfur.github.com/blog/2012/12/02/diary121201-2/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/27/diary121127/">windows7環境で簡単なGUIアプリ作成. Green Shoes使ってみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-27T22:57:00+09:00" pubdate data-updated="true">Nov 27<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>以下手順.</p>
-
-<ol>
-<li>ruby-one-click installerでrubyをインストール</li>
-<li>gem install green_shoes</li>
-<li>以下をfoo.rbファイルに書き込む。</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  require 'green_shoes'
-</span><span class='line'>  Shoes.app do
-</span><span class='line'>    para 'Hello'
-</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>&#8220;rubyw.exe foo.rb&#8221;を呼び出すショートカット作成する. rubyw.exeを使うと、rbファイル実行時にコマンドプロンプトが出ないので綺麗にできる.</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2012/12/02/diary121202/" title="Previous Post: infinitescroll実験">&laquo; infinitescroll実験</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/24/test121124/">Test121124</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-24T15:07:00+09:00" pubdate data-updated="true">Nov 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/24/diary121124/">今日やったこと</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-24T14:53:00+09:00" pubdate data-updated="true">Nov 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>octopressの新しいページを作る</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rvm use 1.9.3
-</span><span class='line'>bundle exec rake new_post\['foo'\]  # create article foo in zsh</span></code></pre></td></tr></table></div></figure>
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/18/first-post/">Test121118</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-18T00:00:00+09:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>テスト</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
-    Included file &#8216;asides/tag_cloud.html&#8217; not found in _includes directoryIncluded file &#8216;asides/category_list.html&#8217; not found in _includes directory<section>
+    Included file 'asides/tag_cloud.html' not found in _includes directoryIncluded file 'asides/category_list.html' not found in _includes directory<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -734,6 +333,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
